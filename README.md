@@ -1,12 +1,18 @@
 # People Tracking with YOLOv8 and ByteTrack
+*This project uses YOLOv8 for person detection and ByteTrack for multi-object tracking to count people entering and exiting through the frame boundaries or specific zones in a video.*
 
-This project demonstrates how to use YOLOv8 for object detection and ByteTrack for real-time tracking of people in a video. The main goal is to detect and track people, and count how many people enter and exit the scene from specific boundaries (left, right, top, and bottom).
+## ~How It Works
+- YOLOv8 detects people in the frame.
+- ByteTrack assigns unique IDs to each person.
+- Zone logic and side-boundary logic track movement across zones and frame edges.
+- utils.py provides helper functions like drawing boxes, checking positions, and updating counts.
 
 ## Features
-
-- **YOLOv8 for Object Detection:** Detects people in each frame of the video.
-- **ByteTrack for Object Tracking:** Tracks each person detected across frames.
-- **Entry/Exit Counting:** Counts how many people enter or exit the scene from the defined boundaries.
+- Detects and tracks people in real-time using YOLOv8 and ByteTrack.
+- Counts entries and exits through all 4 sides: top, bottom, left, right.
+- Counts entries and exits through custom-defined zones (e.g., doors).
+- Draws bounding boxes with ID and FPS overlay.
+- Saves the output to a video file.
 
 ## Requirements
 
@@ -20,6 +26,14 @@ Before running the project, ensure that you have the following libraries install
 - `numpy` – For handling arrays and computations.
 - `matplotlib` – For visualizing results (optional).
 - `ByteTrack` – For object tracking.
+-  **Maybe some of the dependencies are missing but you can install it by yourself**
+
+## 🚀 Running the App
+Run the script using:
+```
+python main.py
+```
+Press q to quit the display window.
 
 1. **Clone the repository:**
 ```bash
@@ -52,23 +66,16 @@ pip install -r requirements.txt
 pip install ultralytics
 ```
 
-## Project Structure
+## 📂 Project Structure
 ```
 plaintext
-PeopleTracking/
-│
-├── data/               # Resources for detections are here
-│
-├── main.py                  # Main script to run detection and tracking
-│
-├── config.py                # used to store configuration settings for a video processing or object detection application, avoiding hardcoding values directly in the main code.
-│
-├── test.py                # THIS IS USELESS
-│
-├── utils.py                # Conditions 
-│
-├── yolov8n.pt        # YOLOv8 weights file (downloaded)
-│
-└── requirements.txt         # Optional, if you want to freeze dependencies
+project_root/
+├── main.py               # Main script for running detection, tracking, and counting
+├── config.py             # Configurations such as video source, resolution, zone positions
+├── utils.py              # Helper functions: draw boxes, update counts, zone checks
+├── output/               # Output folder where processed video will be saved
+│   └── people_outputnew2.mp4
+└── data/
+    └── people.mp4        # Input video for testing
 ```
 
