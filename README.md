@@ -57,13 +57,17 @@ pip install ultralytics
 plaintext
 PeopleTracking/
 │
-├── ByteTrack/               # ByteTrack repository (tracking code)
+├── data/               # Resources for detections are here
 │
 ├── main.py                  # Main script to run detection and tracking
 │
-├── README.md                # This file
+├── config.py                # used to store configuration settings for a video processing or object detection application, avoiding hardcoding values directly in the main code.
 │
-├── yolov8_weights.pt        # YOLOv8 weights file (downloaded)
+├── test.py                # THIS IS USELESS
+│
+├── utils.py                # Drawing labeled bounding boxes on detected people in video frames. Keeping count of how many people enter or exit through different sides of the frame. Checking if a person is inside a certain area.
+│
+├── yolov8n.pt        # YOLOv8 weights file (downloaded)
 │
 └── requirements.txt         # Optional, if you want to freeze dependencies
 ```
