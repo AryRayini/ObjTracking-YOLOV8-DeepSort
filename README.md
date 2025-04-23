@@ -53,14 +53,6 @@ Install the required Python libraries:
 pip install opencv-python torch numpy matplotlib
 ```
 
-## Clone and install ByteTrack:
-Clone the ByteTrack repository and install its dependencies:
-```bash
-git clone https://github.com/ifzhang/ByteTrack.git
-cd ByteTrack
-pip install -r requirements.txt
-```
-
 ## Download YOLOv8 Weights:
 ```bash
 pip install ultralytics
