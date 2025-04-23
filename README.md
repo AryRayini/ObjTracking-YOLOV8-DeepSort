@@ -65,7 +65,7 @@ PeopleTracking/
 │
 ├── test.py                # THIS IS USELESS
 │
-├── utils.py                # Drawing labeled bounding boxes on detected people in video frames. Keeping count of how many people enter or exit through different sides of the frame. Checking if a person is inside a certain area.
+├── utils.py                # Conditions 
 │
 ├── yolov8n.pt        # YOLOv8 weights file (downloaded)
 │
