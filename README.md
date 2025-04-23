@@ -50,6 +50,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ## Install dependencies:
 Install the required Python libraries:
 ```bash
+pip install -r requirements.txt
 pip install opencv-python torch numpy matplotlib
 ```
 
